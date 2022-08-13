@@ -266,6 +266,17 @@
                 type: "GET",
                 url: "/deleteAj/"+customers_id,
                 success: function(response){
+                    const Msg = Swal.mixin({
+                        toast: true,
+                        position: 'top-end',
+                        icon: 'success',
+                        showConfirmButton: false,
+                        timer: 2000
+                    })
+                    Msg.fire({
+                        type: 'success',
+                        title: 'Data Deleted Successfully',
+                    })
                     allData();
                 }
             })
@@ -287,6 +298,19 @@
                     url: "/updateAj/"+customers_id,
                     data: {customers_name:customers_name, customers_email:customers_email, customers_phone:customers_phone, customer_details_country:customer_details_country, customer_details_state:customer_details_state, customer_details_city:customer_details_city},
                     success: function(response){
+
+                        const Msg = Swal.mixin({
+                            toast: true,
+                            position: 'top-end',
+                            icon: 'success',
+                            showConfirmButton: false,
+                            timer: 2000
+                        })
+                        Msg.fire({
+                            type: 'success',
+                            title: 'Data Update Successfully',
+                        })
+
                         allData();
                         clearData();
                         $("#addInfo").show();
