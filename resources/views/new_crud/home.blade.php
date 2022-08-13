@@ -249,14 +249,14 @@
                     $("#UpdateButton").show();
                     
 
-                    $('#customers_id').val(response.customers_id);
-                    $('#customers_name').val(response.customers_name);
-                    $('#customers_email').val(response.customers_email);
-                    $('#customers_phone').val(response.customers_phone);
-                    $('#country').val(response.customer_details_country);
-                    $('#state').val(response.customer_details_state);
-                    $('#city').val(response.customer_details_city);
-                    console.log(response);
+                    $('#customers_id').val(response[0].customers_id);
+                    $('#customers_name').val(response[0].customers_name);
+                    $('#customers_email').val(response[0].customers_email);
+                    $('#customers_phone').val(response[0].customers_phone);
+                    $('#country').val(response[0].customer_details_country);
+                    $('#state').val(response[0].customer_details_state);
+                    $('#city').val(response[0].customer_details_city);
+                    console.log(response[0]);
                 }
             })
         }

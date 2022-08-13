@@ -96,15 +96,14 @@ class CustomerController extends Controller
     }
 
     public function dataEditAj(Request $request, $id){
-        $customer = Customer::find($id);
-        // $customer = Customer_detail::find($id);
-        // $customer = DB::table('customers')
-        //     ->join('customer_details', 'customers.customers_id', '=', 'customer_details.customer_details_id')
-        //     ->join('countries', 'customer_details.customer_details_country', '=', 'countries.countries_id')
-        //     ->join('states', 'customer_details.customer_details_state', '=', 'states.states_id')
-        //     ->join('cities', 'customer_details.customer_details_city', '=', 'cities.cities_id')
-        //     ->where('customers_id', $id)
-        //     ->get();
+        // $customer = Customer::find($id);
+        $customer = DB::table('customers')
+            ->join('customer_details', 'customers.customers_id', '=', 'customer_details.customer_details_id')
+            ->join('countries', 'customer_details.customer_details_country', '=', 'countries.countries_id')
+            ->join('states', 'customer_details.customer_details_state', '=', 'states.states_id')
+            ->join('cities', 'customer_details.customer_details_city', '=', 'cities.cities_id')
+            ->where('customers_id', $id)
+            ->get();
         return response()->json($customer);
     }
 
