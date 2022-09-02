@@ -27,7 +27,7 @@ use App\Http\Controllers\New_crud_c\CustomerController;
 // Route::post('/update/{id}', [StudentController::class, 'updateData']);
 // Route::get('/delete/{id}', [StudentController::class, 'Delete']);
 
-
+//******Multiple Dropdown AJAX********/
 Route::get('/', [CustomerController::class, 'index']);
 Route::post('/getState', [CustomerController::class, 'getState']);
 Route::post('/getCity', [CustomerController::class, 'getCity']);

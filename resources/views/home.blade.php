@@ -50,8 +50,9 @@
                 </form>
                 </div>
             </nav>
+            
         </div>
-
+ 
           <div class="p-3 border">
             <h6 class="text-center">This is Crud</h6>
             <hr>

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Student;
 
+use function PHPUnit\Framework\returnSelf;
+
 class StudentController extends Controller
 {
     public function index(){
@@ -32,6 +34,7 @@ class StudentController extends Controller
         // exit;
         return view('edit')->with(compact('student'));
     }
+    
     public function updateData(Request $request, $id){
         $student =Student::find($id);
         $student->students_name = $request->name;
@@ -42,7 +45,7 @@ class StudentController extends Controller
     }
 
     public function Delete($id){
-        $student = Student::find($id)->delete();
+        // $student = Student::find($id)->delete();
         // $student = Student::where('students_id', $id);
         // if(!is_null($student)){
         //     $student->delete();
