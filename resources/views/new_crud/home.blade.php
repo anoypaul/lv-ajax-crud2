@@ -242,6 +242,7 @@
                 dataType: "json",
                 url: "/editAj/"+customers_id,
                 success: function(response){
+                    // console.log(response);
 
                     $("#addInfo").hide();
                     $("#addButton").hide();

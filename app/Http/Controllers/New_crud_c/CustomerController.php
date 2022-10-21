@@ -29,12 +29,12 @@ class CustomerController extends Controller
     public function getCity(Request $request){
         $states_id = $request->post('state');
         $city = DB::table('cities')->where('states_id', $states_id)->get();
-        print_r($city->toArray());
+        // print_r($city->toArray());
         $html = '<option value="">Select city</option>';
         foreach ($city as $list) {
              $html .= '<option value="'.$list->cities_id.'">'.$list->cities_name.'</option>';
-         }
-         echo $html;
+        }
+        echo $html;
     }
 
     public function dataStore(Request $request){
@@ -75,15 +75,15 @@ class CustomerController extends Controller
         return response()->json($customer);
     }
 
-    public function dataRead(){
-        $users = DB::table('customers')
-            ->join('customer_details', 'customers.customers_id', '=', 'customer_details.customer_details_id')
-            ->join('countries', 'customer_details.customer_details_country', '=', 'countries.countries_id')
-            ->join('states', 'customer_details.customer_details_state', '=', 'states.states_id')
-            ->join('cities', 'customer_details.customer_details_city', '=', 'cities.cities_id')
-            ->get();
-        return view('new_crud.table', compact('users'));
-    }
+    // public function dataRead(){
+    //     $users = DB::table('customers')
+    //         ->join('customer_details', 'customers.customers_id', '=', 'customer_details.customer_details_id')
+    //         ->join('countries', 'customer_details.customer_details_country', '=', 'countries.countries_id')
+    //         ->join('states', 'customer_details.customer_details_state', '=', 'states.states_id')
+    //         ->join('cities', 'customer_details.customer_details_city', '=', 'cities.cities_id')
+    //         ->get();
+    //     return view('new_crud.table', compact('users'));
+    // }
 
     public function dataReadAj(){
         $users = DB::table('customers')
